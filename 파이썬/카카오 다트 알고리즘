@@ -1,0 +1,35 @@
+def solution(dartResult):
+    dic={'S':1, 'D':2, 'T':3, '#':(-1), '*':'*2'}
+    nsum = 0
+    n=[None,None,None]
+    m=0
+    #첫 숫자를 배열에 집어넣음, 처음에 10이 있을 경우 고려
+    n[0]=int(dartResult[0]) if dartResult[0:2]!='10' else 10
+    for i in range(1, len(dartResult)):
+        if dartResult[i].isdigit():
+            #10점을 고려한 if문
+            if dartResult[i+1].isdigit():
+                m+=1
+                for j,k in enumerate(n):
+                    if k==None:
+                        n[j]=10
+                        break
+            elif dartResult[i-1].isdigit():continue
+            #다른 숫자가 나오면 n배열에 숫자 추가
+            else:
+                m+=1
+                for j,k in enumerate(n):
+                    if k==None:
+                        n[j]=int(dartResult[i])
+                        break
+        elif dartResult[i]=='#':
+            n[m]*=(-1)
+        elif dartResult[i]=='*':
+            if m==0:n[m]*=2
+            else:
+                n[m]*=2
+                n[m-1]*=2
+        else:
+            n[m]=n[m]**dic[dartResult[i]]
+    print(n)
+    return sum(n)
