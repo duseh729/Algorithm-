@@ -1,0 +1,25 @@
+def solution(id_list, report, k):
+    report=list(set(report))
+    dic={}
+    dic2={}
+    report_list=[]
+    #신고당한 횟수용 dic, 알림용 유저 dic2, 신고 당한 횟수 카운트
+    for i in report:
+        report_list.append(i.split())
+    for i in id_list:
+        dic[i]=0
+        dic2[i]=0
+    for i in report_list:
+        dic[i[1]]+=1    
+    #신고 당한 횟수가 신고 기준 횟수 보다 많을 시 정지 유저 추가
+    stop_user=[]
+    for i, j in dic.items():
+        if j>=k:stop_user.append(i)
+    #report_list와 stop_user비교 후 dic2유저 목록에 알림 +1
+    for i in report_list:
+        for j in stop_user:
+            if i[1]==j:
+                dic2[i[0]]+=1
+    #dic2 아이템만 추출 후 배열 생성
+    answer = [v for k, v in dic2.items()]
+    return answer

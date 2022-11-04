@@ -1,0 +1,7 @@
+def solution(babbling):
+    n = ["aya", "ye", "woo", "ma"]
+    for k, i in enumerate(babbling):
+        for j in n:
+            babbling[k]=babbling[k].replace(j, " ", 1)
+        babbling[k]=babbling[k].replace(" ", "")
+    return babbling.count("")
