@@ -1,3 +1,4 @@
+# 백준 문제 9012
 n=int(input())
 for _ in range(n):
     k=input()
@@ -15,3 +16,17 @@ for _ in range(n):
             print('YES')
         else:
             print('NO')
+#스택 안쓰고 풀기
+n = int(input())
+for i in range(n):
+    k=input()
+    m=0
+    for j in k:
+        if j==')':m-=1
+        else:m+=1
+        if m<0:
+            print('NO')
+            break
+    if m<0:continue
+    print('YES' if m==0 else 'NO')
+    
