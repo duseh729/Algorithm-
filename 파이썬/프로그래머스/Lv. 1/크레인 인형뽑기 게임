@@ -1,0 +1,24 @@
+# 2차원 배열에 접근 후 0일경우 continue를 사용해 값(인형)에 접근했다.
+
+def solution(board, moves):
+    n=[]
+    i=0
+    answer=0
+    #인형 추출을 위한 부분
+    for i in moves:
+        for j in board:
+            if j[i-1] == 0:continue
+            else:
+                n.append(j[i-1])
+                j[i-1]=0
+                break
+    #같은 인형 삭제
+    while i < len(n)-1:
+        if n[i]==n[i+1]:
+            del n[i]
+            del n[i]
+            answer+=2
+            i=0
+            continue
+        i+=1
+    return answer

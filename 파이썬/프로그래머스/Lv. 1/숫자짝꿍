@@ -1,0 +1,20 @@
+# X,Y의 겹치는 수의 가장 큰 값을 찾는 문제
+# X	Y	result
+# "100"	  "2345"	"-1"
+# "100"	  "203045"	"0"
+# "100"	  "123450"	"10"
+# "12321" "42531"	"321"
+# "5525"  "1255"	"552"
+# 질문하기에서 힌트를 얻었다. 
+# X, Y를 곽티슈로 생각하고 한 장 씩 뽑아쓴다는 글을 보고
+# 9~1까지 추출하면 될 거 같다는 생각을 했다.
+
+def solution(X, Y):
+    answer=''
+    n='9876543210'
+    for i in n:
+        if i in X and i in Y:
+            answer+=i*min(X.count(i), Y.count(i))
+    if answer=='': return '-1'
+    if answer[0]=='0': return '0'
+    return answer

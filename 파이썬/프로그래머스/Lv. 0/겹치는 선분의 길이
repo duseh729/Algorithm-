@@ -1,0 +1,24 @@
+# 빨간색, 초록색, 파란색 선분이 x축 위에 있습니다. 
+# 세 선분의 x좌표 시작과 끝이 [[start, end], [start, end], [start, end]] 형태로 들어있는 
+# 2차원 배열 lines가 매개변수로 주어질 때, 
+# 두 개 이상의 선분이 겹치는 부분의 길이를return 하도록 solution 함수를 완성해보세요.
+
+# 제한사항
+# lines의 길이 = 3
+# lines의 원소의 길이 = 2
+# 모든 선분은 길이가 1 이상입니다.
+# lines의 원소는 [a, b] 형태이며, a, b는 각각 양 끝점 중 하나입니다.
+# -100 ≤ a < b ≤ 100
+
+def solution(lines):
+    answer = 0
+    # 최대 선분의 길이
+    k=[0]*202
+    for i in lines:
+        # 각 선분의 영역에 +1
+        for j in range(i[0]+100, i[1]+100):
+            k[j]+=1
+    for i in k:
+        # 2개 영역 이상이 겹쳤는지 테스트
+        if i>=2:answer+=1
+    return answer
