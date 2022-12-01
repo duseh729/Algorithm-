@@ -1,0 +1,13 @@
+type
+
+max, min
+
+str
+
+append, insert, del, index, reverse
+
+sort, sorted
+
+slicing
+
+len
