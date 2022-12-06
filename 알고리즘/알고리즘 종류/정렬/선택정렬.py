@@ -14,3 +14,18 @@ arr=list(map(int, input().split()))
 print(selection_sort(arr))
 # 선택정렬은 배열[0]~배열[끝]까지 작은 값을 찾아서 
 # 배열의 처음부터 순서대로 넣어주는 것.
+
+# js 선택정렬
+# function selection_sort(arr) {
+#   for (let i = 0; i < arr.length; i++) {
+#     min_idx = i;
+#     for (let j = i + 1; j < arr.length; j++) {
+#       if (arr[min_idx] > arr[j]) {
+#         min_idx = j;
+#       }
+#     }
+#     [arr[min_idx], arr[i]] = [arr[i], arr[min_idx]];
+#   }
+#   return arr;
+# }
+# console.log(selection_sort([3, 4, 5, 1, 2, 3, 4]));
