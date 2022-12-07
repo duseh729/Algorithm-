@@ -57,3 +57,58 @@ print(list2)
 list3 = [2, 5, 6, 7, 1, 2, 4, 7, 10, 11, 4, 15, 13, 1, 6, 4]
 quicksort(list3, 0, len(list3) - 1)
 print(list3)
+
+# js 퀵정렬
+# function swap(myArr, index1, index2) {
+#   [myArr[index1], myArr[index2]] = [myArr[index2], myArr[index1]];
+#   return myArr;
+# }
+
+# function partition(myArr, start, end) {
+#   let b = start;
+#   let p = end;
+#   for (let i = start; i < p; i++) {
+#     if (myArr[p] >= myArr[i]) {
+#       swap(myArr, b, i);
+#       b++;
+#     }
+#   }
+#   swap(myArr, b, p);
+#   return b;
+# }
+
+# function quick_sort(myArr, start, end) {
+#   if (end - start < 1) {
+#     return;
+#   }
+#   let p = partition(myArr, start, end);
+#   quick_sort(myArr, start, p - 1);
+#   quick_sort(myArr, p + 1, end);
+# }
+# // 테스트코드
+# let list1 = [1, 3, 5, 7, 9, 11, 13, 11];
+# quick_sort(list1, 0, list1.length - 1);
+# console.log(list1);
+
+# // 테스트 코드 2
+# let list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15];
+# quick_sort(list2, 0, list2.length - 1);
+# console.log(list2);
+
+# // 테스트 코드 3
+# let list3 = [2, 5, 6, 7, 1, 2, 4, 7, 10, 11, 4, 15, 13, 1, 6, 4];
+# quick_sort(list3, 0, list3.length - 1);
+# console.log(list3);
+
+# // partition
+# // 테스트 코드 1
+# // const list1 = [4, 3, 6, 2, 7, 1, 5];
+# // const pivot_index1 = partition(list1, 0, list1.length - 1);
+# // console.log(list1);
+# // console.log(pivot_index1);
+
+# // 테스트 코드 2
+# // const list2 = [6, 1, 2, 6, 3, 5, 4];
+# // const pivot_index2 = partition(list2, 0, list2.length - 1);
+# // console.log(list2);
+# // console.log(pivot_index2);
