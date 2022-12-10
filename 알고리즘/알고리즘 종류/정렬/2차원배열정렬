@@ -1,3 +1,4 @@
+//JS
 let myArr = [
   [1, 4],
   [3, 5],
@@ -11,7 +12,9 @@ let myArr = [
   [2, 13],
   [12, 14],
 ];
+
 console.log(myArr);
+// arr[1]이 같으면 arr[0] 기준으로 오름차순 정렬
 myArr.sort((a, b) => {
   if (a[1] === b[1]) {
     return a[0] - b[0];
@@ -20,11 +23,7 @@ myArr.sort((a, b) => {
   }
 });
 console.log(myArr);
-let answer = [];
-answer.push(myArr[0]);
-for (i of myArr) {
-  if (i[0] > answer[answer.length - 1][1]) {
-    answer.push(i);
-  }
-}
-console.log(answer);
+
+//파이썬
+//1번 기준으로 오름차순 같으면 0번으로 오름차순
+//k=sorted(k, key=lambda x: (x[1], x[0]))
