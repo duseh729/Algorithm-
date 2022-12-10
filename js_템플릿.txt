@@ -1,0 +1,46 @@
+출처: https://velog.io/@bigsaigon333/Javascript%EB%A1%9C-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B01-%EC%9E%85%EC%B6%9C%EB%A0%A5#%EA%B2%B0%EB%A1%A0-%ED%95%AD%EC%83%81-fs%EB%AA%A8%EB%93%88%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%A9%EB%8B%88%EB%8B%A4
+
+const input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
+
+const fs = require("fs");
+
+// 개행문자(\n)로 구분된 각 행을 요소로 가지는 배열을 반환. 
+// 인코딩을 명시적으로 넘기지 않은 경우에는 raw Buffer가 반환되므로 
+// toString()함수를 호출하여 string으로 변환하여야 한다.
+const input1 = fs.readFileSync(0).toString().split("\n"); 
+
+// options으로 인코딩을 string 자료형으로 넘기는 경우, string을 반환한다.
+const input2 = fs.readFileSync(0, "utf8").split("\n"); 
+
+// input2와 동일
+const input3 = fs.readFileSync(0, {encoding: "utf8"}).split("\n");
+
+// 계산 종료후 마지막에 한번만 출력
+...
+let print = "";
+
+(function rec(lev) {
+  if (lev === M) {
+    print += `${arr.join(" ")}\n`; // depth가 M일 때마다 print에 출력 값 저장
+    return;
+  }
+
+  ...
+  rec(lev + 1);
+  ...
+})(0);
+
+console.log(print); // 계산 종료후 마지막에 출력
+// 계산 중간중간에 출력
+...
+
+(function rec(lev) {
+  if (lev === M) {
+    console.log(`${arr.join(" ")}\n`); // depth가 M일 때마다 print에 출력 값 저장
+    return;
+  }
+
+  ...
+  rec(lev + 1);
+  ...
+})(0);
