@@ -1,0 +1,47 @@
+# 백준 1931
+import sys
+input = sys.stdin.readline
+n=int(input())
+k=[]
+for _ in range(n):
+    k.append(list(map(int,input().split())))
+k=sorted(k, key=lambda x: (x[1], x[0]))
+answer=[]
+answer.append(k[0])
+del k[0]
+for i in k:
+    if i[0]>=answer[-1][1]:
+        answer.append(i)
+print(len(answer))
+
+# JS
+# let myArr = [
+#   [1, 4],
+#   [3, 5],
+#   [0, 6],
+#   [5, 7],
+#   [3, 8],
+#   [5, 9],
+#   [6, 10],
+#   [8, 11],
+#   [8, 12],
+#   [2, 13],
+#   [12, 14],
+# ];
+# console.log(myArr);
+# myArr.sort((a, b) => {
+#   if (a[1] === b[1]) {
+#     return a[0] - b[0];
+#   } else {
+#     return a[1] - b[1];
+#   }
+# });
+# console.log(myArr);
+# let answer = [];
+# answer.push(myArr[0]);
+# for (i of myArr) {
+#   if (i[0] > answer[answer.length - 1][1]) {
+#     answer.push(i);
+#   }
+# }
+# console.log(answer);
