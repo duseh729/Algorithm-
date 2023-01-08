@@ -6,5 +6,24 @@
 여러 접근법의 장단점을 얘기할때도 유용하다.
 코드를 디버그할 때 코드를 느리게 만드는 것을 이해하는 것은 중요하다.
 
+# 
+상수 시간 : O(1)
+선형 시간 : O(N)
+
 #
 performance.now() 걸린 시간을 알려주는 코드이다.
+
+#
+object 자료형을 사용해야 할 때:
+- 정렬할 필요없을 때
+- 빠른 접근, 입력과 제거를 원할 때
+## object의 bigO
+데이터 넣기 : O(1)
+데이터 빼기 : O(1)
+데이터 검색 : O(N)
+데이터 접근 : O(1)
+## object method의 bigO
+Object.keys = O(N)
+Object.values = O(N)
+Object.entries = O(N)
+object.hasOwnProperty(찾을키) = O(1)
